@@ -6,7 +6,7 @@
 /*   By: kahmada <kahmada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 12:48:05 by kahmada           #+#    #+#             */
-/*   Updated: 2024/12/16 10:27:54 by kahmada          ###   ########.fr       */
+/*   Updated: 2024/12/19 17:19:16 by kahmada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ void Harl::complain(std::string level)
 
     void (Harl::*functions[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-    for (size_t i = 0; i < 4; ++i) {
-        if (levels[i] == level) {
+    for (size_t i = 0; i < 4; ++i)
+    {
+        if (levels[i] == level)
+        {
             (this->*functions[i])();
             return;
         }

@@ -6,7 +6,7 @@
 /*   By: kahmada <kahmada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:59:35 by kahmada           #+#    #+#             */
-/*   Updated: 2024/12/16 10:01:49 by kahmada          ###   ########.fr       */
+/*   Updated: 2024/12/19 17:18:56 by kahmada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,10 @@ void Harl::complain(std::string level)
     switch (fix_level(level)) {
         case 0:
             (this->*functions[0])();
-            (this->*functions[1])();
-            (this->*functions[2])();
-            (this->*functions[3])();
-            break;
         case 1:
             (this->*functions[1])();
-            (this->*functions[2])();
-            (this->*functions[3])();
-            break;
         case 2:
             (this->*functions[2])();
-            (this->*functions[3])();
-            break;
         case 3:
             (this->*functions[3])();
             break;
@@ -69,43 +60,3 @@ void Harl::complain(std::string level)
     }
 }
 
-// void Harl::complain(std::string level)
-// {
-//     std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
-//     void (Harl::*functions[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-
-//     int levelIndex = -1;
-//     if (level == "DEBUG")
-//         levelIndex = 0;
-//     else if (level == "INFO")
-//         levelIndex = 1;
-//     else if (level == "WARNING")
-//         levelIndex = 2;
-//     else if (level == "ERROR")
-//         levelIndex = 3;
-
-//     switch (levelIndex) {
-//         case 0:
-//             (this->*functions[0])();
-//             (this->*functions[1])();
-//             (this->*functions[2])();
-//             (this->*functions[3])();
-//             break;
-//         case 1:
-//             (this->*functions[1])();
-//             (this->*functions[2])();
-//             (this->*functions[3])();
-//             break;
-//         case 2:
-//             (this->*functions[2])();
-//             (this->*functions[3])();
-//             break;
-//         case 3:
-//             (this->*functions[3])();
-//             break;
-//         default:
-//             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-//             break ;
-//     }
-// }
